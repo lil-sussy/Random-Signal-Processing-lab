@@ -4,7 +4,7 @@ function Y = BlockSynthesis(pitch,sigma2,Aopt,N)
         e = sqrt(sigma2) .* randn(1,N);
     else
         %arbitrary amplitude, for the signal to be seen in a better way
-        e = 4 .* sin(2.*pi.*pitch.* (1:N) + sqrt(sigma2) .* rand(1,N));
+        e = sin(2.*pi.*pitch.* (1:N) + sqrt(sigma2).* 2.*pi .* rand(1,N));
     end
     
     %Filter the exitation

@@ -6,7 +6,7 @@ function [pitch,sigma2,Aopt] = BlockAnalysis(X,M,Fe)
     Fmax = 400;
     
     %autocorrelation estimation
-    corr = BiasedCrossCorr(X);
+    corr = BiasedCrossCorr(X-mean(X));
     
     %source modeling
     pitch = PitchDetector(corr,Fe,Fmin,Fmax);
